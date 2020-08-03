@@ -1,10 +1,13 @@
 use development;
-create table user_table
+create table user_info
 ( id integer not null auto_increment,
   user_name varchar(50) not null,
   phone_number integer not null,
   email varchar(50),
   address varchar(100),
+  active_user boolean default false,
+  created_on timestamp not null default current_timestamp,
+  updated_on timestamp not null default current_timestamp on update current_timestamp,
   primary key(id)
 );
 
@@ -15,6 +18,8 @@ create table available_stocks
    available_quantity integer not null,
    sold_quantity integer not null,
    intransit_quantity integer not null,
+   created_on timestamp not null default current_timestamp,
+   updated_on timestamp not null default current_timestamp on update current_timestamp,
    primary key(id)
 );
 
@@ -29,11 +34,13 @@ create table batch_information
 );
 
 
-create table company_information
+create table vendor_information
 ( id integer not null auto_increment,
   name varchar(50) not null,
   phone_number integer,
   address varchar(100),
+  created_on timestamp not null default current_timestamp,
+  updated_on timestamp not null default current_timestamp on update current_timestamp,
   primary key(id)
 );
 
@@ -42,6 +49,8 @@ create table flavour_information
   company_id integer not null,
   brand varchar(50) not null,
   flavour varchar(50) not null,
+  created_on timestamp not null default current_timestamp,
+  updated_on timestamp not null default current_timestamp on update current_timestamp,
   primary key(id)
 );
 
