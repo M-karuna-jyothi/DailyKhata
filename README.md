@@ -13,6 +13,6 @@ Android,
 mysql database
 
 Functionalities:
-instock details
-intransit details
-sales information
+instock details,
+intransit details,
+sales information.
